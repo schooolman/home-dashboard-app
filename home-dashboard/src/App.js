@@ -8,9 +8,17 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
+          <h2>
+            This is the first boiler plate page in the home dashboard.
+          </h2>
+          <div>
+            <p>
+              The first module will be a to-do list to remember how to use react and hook it up to firebase.
+            </p>
+            <p>
+              I can use this home page to track plans and progress as I go. May move this to a static page within the app however.
+            </p>
+          </div>
           <a
             className="App-link"
             href="https://reactjs.org"

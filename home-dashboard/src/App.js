@@ -12,6 +12,11 @@ class App extends Component {
             This is the first boiler plate page in the home dashboard.
           </h2>
           <div>
+          <ul>
+            <li>This will be the list of things to accomplish for this app</li>
+            <li>First task will be to build a CRUD To Do list.</li>
+            <li>Next will be to hook it up to a database</li>
+          </ul>
             <p>
               The first module will be a to-do list to remember how to use react and hook it up to firebase.
             </p>

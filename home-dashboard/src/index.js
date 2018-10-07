@@ -8,7 +8,7 @@ var destination = document.querySelector("#container");
 ReactDOM.render(
     <div>
         <h2>Home page of Home Base Application</h2>
-        <div class="todo__main">
+        <div className="todo__main">
             <ToDoList />
         </div>
     </div>,

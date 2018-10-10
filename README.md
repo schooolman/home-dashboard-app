@@ -11,4 +11,13 @@ I will be using the BEM CSS styling method when it comes time to get the styles 
 * shopping list
 * weather widget
 * news widget
-* train information? 
+* train information?
+
+## Work To Do
+
+* Display Weather info in component
+* hook up database to to do list
+* create to do item component
+* Set up Sass
+* refactor CSS to Sass
+* Look into text message to do list functionality

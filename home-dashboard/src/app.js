@@ -1,6 +1,7 @@
 import React from "react";
 import ToDoList from './todolist';
 import WeatherTile from "./Weather";
+import MessageDisplay from "./Messages";
 
 class App extends React.Component {
     state = {
@@ -38,6 +39,13 @@ class App extends React.Component {
                 <WeatherTile 
                     weather={this.state.weather}
                 />
+            </div>
+
+            <div className="homeapp-messages__main">
+                <h2>Will set up an email account to display messages here</h2>
+                <p>In my head this can be am email for other people to send messages and reminders that I'll see on the way out of the house.</p>
+
+                <MessageDisplay />
             </div>
         </div>
     }

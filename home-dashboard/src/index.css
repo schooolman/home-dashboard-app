@@ -1,9 +1,26 @@
 body {
   padding: 50px;
-  background-color: #66CCFF;
+  background-color: rgb(157, 235, 235);
   font-family: sans-serif;
 }
 #container {
   display: flex;
   justify-content: center;
+}
+
+.homeapp {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.homeapp-title {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 50px;
+  border-bottom: 5px solid black;
+}
+
+.homeapp-todo__main, .homeapp-weather__main, .homeapp-messages__main {
+  width: 45%;
 }

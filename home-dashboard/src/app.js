@@ -9,7 +9,7 @@ class App extends React.Component {
         weather: []
     }
 
-    componentDidMount() {
+    componentDidMount() { // Retrieving the currnet weather
         fetch('http://api.openweathermap.org/data/2.5/weather?zip=60640,us&APPID=b22b825c1197355edeef5ad8a62cc1a6')
             .then(response => { return response.json(); })
             .then( data => {

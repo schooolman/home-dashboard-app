@@ -21,3 +21,10 @@ I will be using the BEM CSS styling method when it comes time to get the styles 
 * Set up Sass
 * refactor CSS to Sass
 * Look into text message to do list functionality
+
+## Integrating a messaging system into the app
+
+* Started looking into different services like Twilio and Zapier and integrating those into cloudbase.
+* I think that the way to go is going to be to hook up an email to zapier that forwards the contents to firebase.
+* Twilio will cost money eventually.
+* I set up a gmail account to handle the messages, homemessageapp@gmail.com and need to verify it with zapier parser application to handle the incomming messages.

@@ -21,6 +21,7 @@ I will be using the BEM CSS styling method when it comes time to get the styles 
 * Set up Sass
 * refactor CSS to Sass
 * Look into text message to do list functionality
+* To do list store tasks in firebase
 
 ## Integrating a messaging system into the app
 

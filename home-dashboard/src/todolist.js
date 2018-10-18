@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import TodoItems from "./TodoItems";
-import firebase from './firebase.js';
+import firebase from './firebase';
 import "./todolist.css";
 
 class ToDoList extends Component {
@@ -28,9 +28,20 @@ class ToDoList extends Component {
                     items: prevState.items.concat(newItem)
                 };
             });
-            this._inputElement.value = "";
         }
         console.log(this.state.items);
+        const itemsRef = firebase.database().ref('items');
+        console.log(this._inputElement.value, 'test');
+        const item = {
+            title: this._inputElement.value,
+            // title: this.state.currentItem,
+            // user: this.state.username
+        }
+        itemsRef.push(item);
+        this.setState({
+            currentItem: '',
+        })
+        this._inputElement.value = "";
         e.preventDefault();
     }
 
@@ -61,8 +72,8 @@ class ToDoList extends Component {
         return (
             <div className="todoListMain">
                 <div className="header">
-                    <form onSubmit={this.handleSubmit}>
-                    {/* <form onSubmit={this.addItem}> */}
+                    {/* <form onSubmit={this.handleSubmit}> */}
+                    <form onSubmit={this.addItem}>
                         <input
                             ref={(a) => this._inputElement = a} 
                             placeholder="Enter a task"

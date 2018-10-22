@@ -3,6 +3,7 @@ body {
   background-color: rgb(157, 235, 235);
   font-family: sans-serif;
 }
+
 #container {
   display: flex;
   justify-content: center;
@@ -12,15 +13,17 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-}
+  
+  &-todo__main,
+  &-weather__main,
+  &-messages__main {
+    width: 45%;
+  }
 
-.homeapp-title {
-  width: 100%;
-  text-align: center;
-  margin-bottom: 50px;
-  border-bottom: 5px solid black;
-}
-
-.homeapp-todo__main, .homeapp-weather__main, .homeapp-messages__main {
-  width: 45%;
+  &-title {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 50px;
+    border-bottom: 5px solid black;    
+  }
 }

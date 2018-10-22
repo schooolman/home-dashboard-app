@@ -34,8 +34,6 @@ class ToDoList extends Component {
         console.log(this._inputElement.value, 'test');
         const item = {
             title: this._inputElement.value,
-            // title: this.state.currentItem,
-            // user: this.state.username
         }
         itemsRef.push(item);
         this.setState({
@@ -49,12 +47,11 @@ class ToDoList extends Component {
         e.preventDefault();
         const itemsRef = firebase.database().ref('items');
         const item = {
-            title: this.state.currentItem,
-            // user: this.state.username
+            title: this.state.currentItem
         }
         itemsRef.push(item);
         this.setState({
-            currentItem: '',
+            currentItem: ''
         })
     }
 

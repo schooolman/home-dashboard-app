@@ -45,9 +45,8 @@
       cursor: pointer;
     }
   }
-} 
 
-.todoListMain .delete-key {
+  .delete-key {
     float: right;
     background-color: rgb(218, 79, 79);
     padding: 5px;
@@ -58,9 +57,9 @@
     color: white;
     cursor: pointer;
     transition: all 250ms ease-out;
-}
-
-.todoListMain .delete-key:hover {
-    color: black;
-    transform: translate(3px, -7px);
-}
+    &:hover {
+      color: black;
+      transform: translate(3px, -7px);
+    }
+  }
+} 

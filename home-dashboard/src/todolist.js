@@ -12,19 +12,30 @@ class ToDoList extends Component {
             currentItem: ''
         };
 
-        var that = this;
-        var firebaseRef = firebase.database().ref();
-        console.log(that, 'that');
-        console.log(firebaseRef.database, 'value');
+        var taskData = firebase.database().ref('items');
+        taskData.on('value', function(snapshot) {
+            let dataList = snapshot.val();
+            let taskList = Object.keys(dataList).map(function (key) {
+                return [key, dataList[key]];
+            });
+            console.log(taskList);
+        });
 
-        firebaseRef.once('value')
-            .then(function (dataSnapshot) {
-                    console.log(dataSnapshot);
+        console.log('The state right now', this.state);
+
+        // var that = this;
+        // var firebaseRef = firebase.database().ref();
+        // console.log(that, 'that');
+        // console.log(firebaseRef.database, 'value');
+
+        // firebaseRef.once('value')
+        //     .then(function (dataSnapshot) {
+        //             console.log(dataSnapshot);
                 
                 // that.setState({
                 //     // currentItem: currentItem
                 // })
-            })
+            // })
 
         // var that = this;
         // var firebaseRef = firebase.database().ref();

@@ -12,6 +12,29 @@ class ToDoList extends Component {
             currentItem: ''
         };
 
+        var that = this;
+        var firebaseRef = firebase.database().ref();
+        console.log(that, 'that');
+        console.log(firebaseRef.database, 'value');
+
+        firebaseRef.once('value')
+            .then(function (dataSnapshot) {
+                    console.log(dataSnapshot);
+                
+                // that.setState({
+                //     // currentItem: currentItem
+                // })
+            })
+
+        // var that = this;
+        // var firebaseRef = firebase.database().ref();
+        // firebaseRef.once('value')
+        //     .then(function (dataSnapshot) {
+        //         that.setState({
+        //             messages: messages
+        //         });
+        //     });
+
         this.addItem = this.addItem.bind(this);
         this.deleteItem = this.deleteItem.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -57,6 +80,7 @@ class ToDoList extends Component {
 
     deleteItem(key) {
         var filteredItems = this.state.items.filter(function (item) {
+            console.log('delete');
             return (item.key !== key);
     });
 

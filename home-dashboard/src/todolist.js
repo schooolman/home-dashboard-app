@@ -12,17 +12,6 @@ class ToDoList extends Component {
             currentItem: ''
         };
 
-        var taskData = firebase.database().ref('items');
-        taskData.on('value', function(snapshot) {
-            let dataList = snapshot.val();
-            let taskList = Object.keys(dataList).map(function (key) {
-                return [key, dataList[key]];
-            });
-            console.log(taskList);
-        });
-
-        console.log('The state right now', this.state);
-
         // var that = this;
         // var firebaseRef = firebase.database().ref();
         // console.log(that, 'that');
@@ -49,7 +38,20 @@ class ToDoList extends Component {
         this.addItem = this.addItem.bind(this);
         this.deleteItem = this.deleteItem.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        // this.componentDidMount = this.componentDidMount.bind(this);
     }
+
+    // componentDidMount(e) {
+    //     e.preventDefault();
+    //     let taskData = firebase.database().ref('items');
+    //     taskData.on('value', function (snapshot) {
+    //         let dataList = snapshot.val();
+    //         let taskList = Object.keys(dataList).map(function (key) {
+    //             return [key, dataList[key]];
+    //         });
+    //     });
+    //     console.log(this.state, ' firebase task list');
+    // }
 
     addItem(e) {
         if (this._inputElement.value !== "") {
@@ -57,15 +59,14 @@ class ToDoList extends Component {
                 text: this._inputElement.value,
                 key: Date.now()
             };
-            this.setState((prevState) => {
-                return {
-                    items: prevState.items.concat(newItem)
-                };
-            });
+            // console.log(newItem);
+            // this.setState((prevState) => {
+            //     return {
+            //         items: prevState.items.concat(newItem)
+            //     };
+            // });
         }
-        console.log(this.state.items);
         const itemsRef = firebase.database().ref('items');
-        console.log(this._inputElement.value, 'test');
         const item = {
             title: this._inputElement.value,
         }
@@ -101,6 +102,17 @@ class ToDoList extends Component {
     }
 
     render() {
+
+        let taskData = firebase.database().ref('items');
+        taskData.on('value', function (snapshot) {
+            let dataList = snapshot.val();
+            let taskList = Object.keys(dataList).map(function (key) {
+                return [key, dataList[key]];
+            });
+            console.log(taskList, ' firebase task list');
+            this.setState({items: taskList})
+        });
+
         return (
             <div className="todoListMain">
                 <div className="header">
